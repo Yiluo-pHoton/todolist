@@ -4,7 +4,7 @@
     <thead>
         <tr>
             <td>
-                <h3 class="text-success">Todo List<small> - Your task manager</small></h3>
+                <h3>Todo List<small> - Your task manager</small></h3>
             </td>
         </tr>
     </thead>
@@ -20,15 +20,17 @@
         <tr class='warning'>
         {% endif %}
         {% if todo.priority == '3' %}
-        <tr class='info'>
+        <tr class='necessary'>
         {% endif %}
             <td class="todo">{{ todo.todo }}</td>
             <td class="te">
-                <div class="span2">
-                    <a href="{% url "finish" todo.id %}" title="finish"><i class=" icon-ok"></i></a>
-                    <a href="{% url "update" todo.id %}" title="edit"><i class="icon-edit"></i></a>
-                    <a href="{% url "delete" todo.id %}" title="delete"><i class="icon-trash"></i></a>
-                </div>
+                  <a href="{% url "finish" todo.id %}" title="finish"><i class=" icon-ok"></i></a>
+            </td>
+            <td class="te">
+                  <a href="{% url "update" todo.id %}" title="edit"><i class="icon-edit"></i></a>
+            </td>
+            <td class="te">
+                  <a href="{% url "delete" todo.id %}" title="delete"><i class="icon-trash"></i></a>
             </td>
             <td><p>{{ todo.pubtime }}<p></td>
         </tr>
@@ -37,11 +39,13 @@
         <tr class='success'>
             <td class="ftodo muted">{{ ftodo.todo }}</td>
             <td class="te">
-                <div class="span2">
-                    <a href="{% url "backout" ftodo.id %}" title="finish"><i class=" icon-repeat"></i></a>
-                    <a href="{% url "update" ftodo.id %}" title="edit"><i class="icon-edit"></i></a>
-                    <a href="{% url "delete" ftodo.id %}" title="delete"><i class="icon-trash"></i></a>
-                </div>
+                  <a href="{% url "finish" todo.id %}" title="finish"><i class=" icon-ok"></i></a>
+            </td>
+            <td class="te">
+                  <a href="{% url "update" todo.id %}" title="edit"><i class="icon-edit"></i></a>
+            </td>
+            <td class="te">
+                  <a href="{% url "delete" todo.id %}" title="delete"><i class="icon-trash"></i></a>
             </td>
         </tr>
         {% endfor %}
@@ -50,8 +54,8 @@
 <a class="button type2" href="#myModal" role="button" data-toggle="modal">
     <i class="icon-plus"></i><span > ADD</span>
 </a>
-<a class="button type2" href="{% url "hide" %}" role="button">
-    <i class="icon-minus"></i><span > Hide Completed</span>
+<a class="button type2" href="{% url "show" %}" role="button">
+    <i class="icon-minus"></i><span > Show Completed</span>
 </a>
 {% endblock %}
 </div>
