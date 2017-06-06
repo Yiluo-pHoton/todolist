@@ -5,8 +5,8 @@ from datetime import datetime
 class Todo(models.Model):
     user = models.ForeignKey(User)
     todo = modelsCharField(max_length=200)
-    flag = models.CharField(max_length=2, default='1')
-    priority = models.CharField(max_length=2, default='0')
+    flag = models.IntegerField(default=1)
+    priority = models.IntegerField(default=0)
     pubtime = models.DataTimeField(default=datetime.now, blank=True)
 
     def __unicode__(self):
