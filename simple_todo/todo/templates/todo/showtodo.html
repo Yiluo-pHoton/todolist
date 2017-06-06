@@ -4,11 +4,14 @@
     <thead>
         <tr>
             <td>
-                <h3 class="text-success">待办事项</h3>
+                <h3 class="text-success">Todo List<small> - Your task manager</small></h3>
             </td>
         </tr>
     </thead>
     <tbody>
+        <th>Task Name</th>
+        <th>Operations</th>
+        <th>Created At</th>
         {% for todo in todolist %}
         {% if todo.priority == '1' %}
         <tr class='error'>
@@ -27,6 +30,7 @@
                     <a href="{% url "delete" todo.id %}" title="delete"><i class="icon-trash"></i></a>
                 </div>
             </td>
+            <td><p>{{ todo.pubtime }}<p></td>
         </tr>
         {% endfor %}
         {% for ftodo in finishtodos %}
@@ -43,8 +47,11 @@
         {% endfor %}
     </tbody>
 </table>
-<a class="btn btn-success" href="#myModal" role="button" data-toggle="modal">
-    <i class="icon-plus icon-white"></i><span > ADD</span>
+<a class="button type2" href="#myModal" role="button" data-toggle="modal">
+    <i class="icon-plus"></i><span > ADD</span>
+</a>
+<a class="button type2" href="{% url "hide" %}" role="button">
+    <i class="icon-minus"></i><span > Hide Completed</span>
 </a>
 {% endblock %}
 </div>

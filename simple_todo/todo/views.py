@@ -53,13 +53,13 @@ def addTodo(request):
         todolist = Todo.objects.filter(flag='1')
         finishtodos = Todo.objects.filter(flag=0)
         return render(request, 'todo/showtodo.html',
-                              {'todolist': todolist, 
+                              {'todolist': todolist,
                                'finishtodos': finishtodos})
     else:
         todolist = Todo.objects.filter(flag=1)
         finishtodos = Todo.objects.filter(flag=0)
         return render(request, 'todo/simpleTodo.html',
-                              {'todolist': todolist, 
+                              {'todolist': todolist,
                                'finishtodos': finishtodos})
 
 def updatetodo(request, id=''):
@@ -81,3 +81,13 @@ def updatetodo(request, id=''):
             raise Http404
         return render(request, 'todo/updatetodo.html', {'todo': todo})
 
+def hideCompleted(request):
+    if request.method == 'POST':
+        todolist = Todo.objects.filter(flag='1')
+        return render(request, 'todo/simpleTodo.html', {'todolist': todolist})
+    else:
+        todolist = Todo.objects.filter(flag=1)
+        finishtodos = Todo.objects.filter(flag=0)
+        return render(request, 'todo/simpleTodo.html',
+                            {'todolist': todolist,
+                            'finishtodos': finishtodos})
