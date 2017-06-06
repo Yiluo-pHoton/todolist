@@ -1,16 +1,22 @@
+# -*-coding: utf-8 -*-
+#!/usr/bin/env python
+from __future__ import unicode_literals
+
 from django.db import models
-from django_openid_auth.models import User
-from datetime import datetime
-# Create your models here.
+from django.contrib.auth.models import User
+
+
 class Todo(models.Model):
     user = models.ForeignKey(User)
-    todo = modelsCharField(max_length=200)
-    flag = models.IntegerField(default=1)
-    priority = models.IntegerField(default=0)
-    pubtime = models.DataTimeField(default=datetime.now, blank=True)
+    todo = models.CharField(max_length=200)
+    flag = models.CharField(max_length=2)
+    priority = models.CharField(max_length=2)
+    pubtime = models.DateTimeField(auto_now_add=True)
 
     def __unicode__(self):
         return u'%d %s %s' % (self.id, self.todo, self.flag)
 
     class Meta:
         ordering = ['priority', 'pubtime']
+
+# Create your models here.

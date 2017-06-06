@@ -26,8 +26,8 @@
                         dataType: "html",
                         success: function(html, textStatus) {
                             $('#todo').replaceWith(html);
-                            $('#myModal').modal('hide');
-                            $('#myModal form')[0].reset();
+                            $('#myModal').modal('hide');   
+                            $('#myModal form')[0].reset();                   
                         },
                         error: function (XMLHttpRequest, textStatus, errorThrown) {
                             $('#comment_form form').replaceWith('Your comment was unable to be posted at this time.  We apologise for the inconvenience.');
@@ -39,7 +39,7 @@
             $(document).ready(function(){
                 sendtwitter();
             })
-        </script>
+        </script>     
         {% endblock %}
     </head>
     <body>
@@ -72,7 +72,7 @@
                                     <div class="span2">
                                         <a href="{% url "finish" todo.id %}" title="finish"><i class=" icon-ok"></i></a>
                                         <a href="{% url "update" todo.id %}" title="edit"><i class="icon-edit"></i></a>
-                                        <a href="{% url "delete" todo.id %}" title="delete"><i class="icon-trash"></i></a>
+                                        <a href="{% url "delete" todo.id %}" title="delete"><i class="icon-trash"></i></a>                          
                                     </div>
                                 </td>
                             </tr>
@@ -114,11 +114,11 @@
                 <label class="radio inline" for="priority">
                     <input type="radio" name="priority" value="1"/>
                     <span class="label label-important">重要</span>
-                </label>
+                </label>          
                 <label class="radio inline" for="priority">
                     <input type="radio" name="priority" value="2"/>
                     <span class="label label-warning">警告</span>
-                </label>
+                </label>          
                 <label class="radio inline" for="priority">
                     <input type="radio" name="priority" value="3"/>
                     <span class="label label-success">成功</span>
