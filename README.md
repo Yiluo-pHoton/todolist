@@ -41,7 +41,9 @@ Better UI							| Sorta... Maybe meh
 
 The ```Show Completed``` button doesnt work very well.
 Trying to implemented the following two effects, but failed. Kudos to great designers on the CodePen.
+
 ![img](https://d2ppvlu71ri8gs.cloudfront.net/items/3r2Y163S0P0M0s2T0519/Screen%20Recording%202017-06-06%20at%2009.56%20PM.gif?v=0a53efa0)
+
 ![img](https://d2ppvlu71ri8gs.cloudfront.net/items/0K0Z1G3O0D023w1V2e21/Screen%20Recording%202017-06-06%20at%2009.57%20PM.gif?v=d48298f0)
 
 ## Contacts:
