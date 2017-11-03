@@ -49,8 +49,5 @@ Trying to implemented the following two effects, but failed. Kudos to great desi
 ## Contacts:
 
 ```
-geekowl@yahoo.com
-```
-```
-work@yiluo-li.pw
+yiluo.li.astrophysics@gmail.com
 ```
